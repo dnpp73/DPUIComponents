@@ -7,17 +7,16 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		19256D051950AE1300969AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19256D071950AE1300969AD5 /* Main.storyboard */; };
 		1930481E195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304820195054A10052E551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481F195054A10052E551 /* CoreGraphics.framework */; };
 		19304822195054A10052E551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304821195054A10052E551 /* UIKit.framework */; };
-		19304828195054A10052E551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 19304826195054A10052E551 /* InfoPlist.strings */; };
 		1930482A195054A10052E551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304829195054A10052E551 /* main.m */; };
 		1930482E195054A10052E551 /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930482D195054A10052E551 /* DPAppDelegate.m */; };
 		19304830195054A10052E551 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1930482F195054A10052E551 /* Images.xcassets */; };
 		19304837195054A10052E551 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304836195054A10052E551 /* XCTest.framework */; };
 		19304838195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304839195054A10052E551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304821195054A10052E551 /* UIKit.framework */; };
-		19304841195054A10052E551 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 1930483F195054A10052E551 /* InfoPlist.strings */; };
 		19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304842195054A10052E551 /* DPUIComponentsExampleTests.m */; };
 		199ECF531950557E00C722FB /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199ECF4C1950557E00C722FB /* DPHorizontalScrollableViewController.m */; };
 		199ECF541950557E00C722FB /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 199ECF4C1950557E00C722FB /* DPHorizontalScrollableViewController.m */; };
@@ -40,12 +39,13 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		19256D081950AE5600969AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		19256D0E1950AF2000969AD5 /* DPUIComponentsExampleTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DPUIComponentsExampleTests-Info.plist"; sourceTree = "<group>"; };
 		1930481A195054A10052E551 /* DPUIComponentsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPUIComponentsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1930481D195054A10052E551 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1930481F195054A10052E551 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		19304821195054A10052E551 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		19304825195054A10052E551 /* DPUIComponentsExample-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DPUIComponentsExample-Info.plist"; sourceTree = "<group>"; };
-		19304827195054A10052E551 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19304829195054A10052E551 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		1930482B195054A10052E551 /* DPUIComponentsExample-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "DPUIComponentsExample-Prefix.pch"; sourceTree = "<group>"; };
 		1930482C195054A10052E551 /* DPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPAppDelegate.h; sourceTree = "<group>"; };
@@ -53,8 +53,6 @@
 		1930482F195054A10052E551 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPUIComponentsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19304836195054A10052E551 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		1930483E195054A10052E551 /* DPUIComponentsExampleTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "DPUIComponentsExampleTests-Info.plist"; sourceTree = "<group>"; };
-		19304840195054A10052E551 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		19304842195054A10052E551 /* DPUIComponentsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPUIComponentsExampleTests.m; sourceTree = "<group>"; };
 		199ECF4B1950557E00C722FB /* DPHorizontalScrollableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHorizontalScrollableViewController.h; sourceTree = "<group>"; };
 		199ECF4C1950557E00C722FB /* DPHorizontalScrollableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPHorizontalScrollableViewController.m; sourceTree = "<group>"; };
@@ -126,6 +124,7 @@
 			children = (
 				1930482C195054A10052E551 /* DPAppDelegate.h */,
 				1930482D195054A10052E551 /* DPAppDelegate.m */,
+				19256D071950AE1300969AD5 /* Main.storyboard */,
 				1930482F195054A10052E551 /* Images.xcassets */,
 				19304824195054A10052E551 /* Supporting Files */,
 			);
@@ -136,7 +135,6 @@
 			isa = PBXGroup;
 			children = (
 				19304825195054A10052E551 /* DPUIComponentsExample-Info.plist */,
-				19304826195054A10052E551 /* InfoPlist.strings */,
 				19304829195054A10052E551 /* main.m */,
 				1930482B195054A10052E551 /* DPUIComponentsExample-Prefix.pch */,
 			);
@@ -155,8 +153,7 @@
 		1930483D195054A10052E551 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				1930483E195054A10052E551 /* DPUIComponentsExampleTests-Info.plist */,
-				1930483F195054A10052E551 /* InfoPlist.strings */,
+				19256D0E1950AF2000969AD5 /* DPUIComponentsExampleTests-Info.plist */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -236,6 +233,7 @@
 			hasScannedForEncodings = 0;
 			knownRegions = (
 				en,
+				Base,
 			);
 			mainGroup = 19304811195054A10052E551;
 			productRefGroup = 1930481B195054A10052E551 /* Products */;
@@ -253,7 +251,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19304828195054A10052E551 /* InfoPlist.strings in Resources */,
+				19256D051950AE1300969AD5 /* Main.storyboard in Resources */,
 				19304830195054A10052E551 /* Images.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,7 +260,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				19304841195054A10052E551 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -305,20 +302,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		19304826195054A10052E551 /* InfoPlist.strings */ = {
+		19256D071950AE1300969AD5 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
-				19304827195054A10052E551 /* en */,
+				19256D081950AE5600969AD5 /* Base */,
 			);
-			name = InfoPlist.strings;
-			sourceTree = "<group>";
-		};
-		1930483F195054A10052E551 /* InfoPlist.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				19304840195054A10052E551 /* en */,
-			);
-			name = InfoPlist.strings;
+			name = Main.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
