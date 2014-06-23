@@ -1,5 +1,6 @@
 #import "DPMarqueeLabel.h"
 
+
 @interface DPMarqueeLabel () <UIScrollViewDelegate>
 {
     BOOL _isMarqueeAnimating;
@@ -8,6 +9,7 @@
     UILabel* _label;
 }
 @end
+
 
 @implementation DPMarqueeLabel
 

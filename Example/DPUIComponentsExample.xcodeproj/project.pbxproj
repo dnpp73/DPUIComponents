@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1924F57719586A950090DB7A /* DPToastViewManager.m */; };
+		1924F57919586A950090DB7A /* DPToastViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1924F57719586A950090DB7A /* DPToastViewManager.m */; };
 		19256D051950AE1300969AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19256D071950AE1300969AD5 /* Main.storyboard */; };
 		1930481E195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304820195054A10052E551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481F195054A10052E551 /* CoreGraphics.framework */; };
@@ -18,6 +20,8 @@
 		19304838195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304839195054A10052E551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304821195054A10052E551 /* UIKit.framework */; };
 		19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304842195054A10052E551 /* DPUIComponentsExampleTests.m */; };
+		19759DA51958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
+		19759DA61958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
 		19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
 		19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
 		19B63EDA1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED11951938800CCCD9C /* DPHorizontalScrollableViewController.m */; };
@@ -43,6 +47,20 @@
 			remoteGlobalIDString = 19304819195054A10052E551;
 			remoteInfo = DPUIComponentsExample;
 		};
+		1924F57A19586AF40090DB7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19304812195054A10052E551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19304819195054A10052E551;
+			remoteInfo = DPUIComponentsExample;
+		};
+		1924F57C19586AF40090DB7A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 19304812195054A10052E551 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 19304819195054A10052E551;
+			remoteInfo = DPUIComponentsExample;
+		};
 		1930483A195054A10052E551 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 19304812195054A10052E551 /* Project object */;
@@ -53,6 +71,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1924F57619586A950090DB7A /* DPToastViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastViewManager.h; sourceTree = "<group>"; };
+		1924F57719586A950090DB7A /* DPToastViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastViewManager.m; sourceTree = "<group>"; };
 		19256D081950AE5600969AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		19256D0E1950AF2000969AD5 /* DPUIComponentsExampleTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DPUIComponentsExampleTests-Info.plist"; sourceTree = "<group>"; };
 		1930481A195054A10052E551 /* DPUIComponentsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPUIComponentsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -68,6 +88,8 @@
 		19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPUIComponentsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19304836195054A10052E551 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19304842195054A10052E551 /* DPUIComponentsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPUIComponentsExampleTests.m; sourceTree = "<group>"; };
+		19759DA31958775900B062C0 /* DPToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastView.h; sourceTree = "<group>"; };
+		19759DA41958775900B062C0 /* DPToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastView.m; sourceTree = "<group>"; };
 		19B63ECD1951938800CCCD9C /* UIView+dp_fadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_fadeInOut.h"; sourceTree = "<group>"; };
 		19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_fadeInOut.m"; sourceTree = "<group>"; };
 		19B63ED01951938800CCCD9C /* DPHorizontalScrollableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHorizontalScrollableViewController.h; sourceTree = "<group>"; };
@@ -102,6 +124,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1924F57519586A750090DB7A /* ToastView */ = {
+			isa = PBXGroup;
+			children = (
+				1924F57619586A950090DB7A /* DPToastViewManager.h */,
+				1924F57719586A950090DB7A /* DPToastViewManager.m */,
+				19759DA31958775900B062C0 /* DPToastView.h */,
+				19759DA41958775900B062C0 /* DPToastView.m */,
+			);
+			path = ToastView;
+			sourceTree = "<group>";
+		};
 		19304811195054A10052E551 = {
 			isa = PBXGroup;
 			children = (
@@ -179,6 +212,7 @@
 				19B63ED21951938800CCCD9C /* MarqueeLabel */,
 				19B63ECC1951938800CCCD9C /* FadeInOut */,
 				19B63ED51951938800CCCD9C /* RecursiveUtils */,
+				1924F57519586A750090DB7A /* ToastView */,
 			);
 			name = DPUIComponents;
 			path = ../DPUIComponents;
@@ -254,6 +288,8 @@
 				1930483B195054A10052E551 /* PBXTargetDependency */,
 				190AF627195151FE00B629FF /* PBXTargetDependency */,
 				190AF629195151FE00B629FF /* PBXTargetDependency */,
+				1924F57B19586AF40090DB7A /* PBXTargetDependency */,
+				1924F57D19586AF40090DB7A /* PBXTargetDependency */,
 			);
 			name = DPUIComponentsExampleTests;
 			productName = DPUIComponentsExampleTests;
@@ -320,9 +356,11 @@
 			files = (
 				1930482E195054A10052E551 /* DPAppDelegate.m in Sources */,
 				19B63EDA1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */,
+				19759DA51958775900B062C0 /* DPToastView.m in Sources */,
 				19B63EDC1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
 				19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
 				1930482A195054A10052E551 /* main.m in Sources */,
+				1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */,
 				19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -333,8 +371,10 @@
 			files = (
 				19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
 				19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
+				1924F57919586A950090DB7A /* DPToastViewManager.m in Sources */,
 				19B63EDB1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */,
 				19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */,
+				19759DA61958775900B062C0 /* DPToastView.m in Sources */,
 				19B63EDD1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -351,6 +391,16 @@
 			isa = PBXTargetDependency;
 			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
 			targetProxy = 190AF628195151FE00B629FF /* PBXContainerItemProxy */;
+		};
+		1924F57B19586AF40090DB7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
+			targetProxy = 1924F57A19586AF40090DB7A /* PBXContainerItemProxy */;
+		};
+		1924F57D19586AF40090DB7A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
+			targetProxy = 1924F57C19586AF40090DB7A /* PBXContainerItemProxy */;
 		};
 		1930483B195054A10052E551 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;

@@ -1,5 +1,6 @@
 #import <UIKit/UIKit.h>
 
+
 @interface DPMarqueeLabel : UIView
 
 @property (nonatomic)                                      BOOL marqueeEnabled;
