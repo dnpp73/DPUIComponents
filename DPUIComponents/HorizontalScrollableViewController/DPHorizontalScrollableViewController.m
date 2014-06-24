@@ -21,17 +21,17 @@
 
 #pragma mark - Initializer
 
-- (id)init
+- (instancetype)init
 {
     return [self initWithNibName:nil bundle:nil];
 }
 
-- (id)initWithCoder:(NSCoder*)aDecoder
+- (instancetype)initWithCoder:(NSCoder*)aDecoder
 {
     return [self initWithNibName:nil bundle:nil];
 }
 
-- (id)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
+- (instancetype)initWithNibName:(NSString*)nibNameOrNil bundle:(NSBundle*)nibBundleOrNil
 {
     self = [super initWithNibName:nibNameOrNil bundle:nibBundleOrNil];
     if (self) {
@@ -41,7 +41,7 @@
     return self;
 }
 
-- (id)initWithDelegate:(id<DPHorizontalScrollableViewControllerDelegate>)delegate rowViewControllers:(NSArray*)rowViewControllers
+- (instancetype)initWithDelegate:(id<DPHorizontalScrollableViewControllerDelegate>)delegate rowViewControllers:(NSArray*)rowViewControllers
 {
     self = [self initWithNibName:nil bundle:nil];
     if (self) {

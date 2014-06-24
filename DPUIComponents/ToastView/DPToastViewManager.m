@@ -73,13 +73,28 @@
     [_queueingToastViews removeObject:toastView];
     _currentToastView = toastView;
     _showingToastView = YES;
+
+    UIViewController* targetViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
+    UIView*           targetView           = targetViewController.view;
     
-#warning 実装する
     {
-        [[[[UIApplication sharedApplication] keyWindow] rootViewController].view addSubview:toastView];
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self dismissToastView:toastView];
-        });
+#warning 実装する
+        toastView.hidden = NO;
+        toastView.alpha  = 0.0;
+        [targetView addSubview:toastView];
+        
+        void (^anim)(void) = ^{
+            toastView.alpha = 1.0;
+        };
+        void (^comp)(BOOL) = ^(BOOL finished){
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self dismissToastView:toastView];
+            });
+        };
+        NSTimeInterval animationDuration = 1.0;
+        NSTimeInterval animationDelay    = 0.0;
+        UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
+        [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
     }
 }
 
@@ -104,9 +119,15 @@
         [self showHeadToastViewIfExist];
     };
 
-#warning 実装する
     {
-        comp(YES);
+#warning 実装する
+        void (^anim)(void) = ^{
+            toastView.alpha = 0.0;
+        };
+        NSTimeInterval animationDuration = 1.0;
+        NSTimeInterval animationDelay    = 0.0;
+        UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
+        [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
     }
 }
 

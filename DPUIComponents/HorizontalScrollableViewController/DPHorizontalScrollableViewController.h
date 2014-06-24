@@ -28,7 +28,7 @@
 - (void)focusToViewController:(UIViewController*)viewController animated:(BOOL)animated force:(BOOL)force;
 
 @property (nonatomic, weak) id<DPHorizontalScrollableViewControllerDelegate> delegate;
-- (id)initWithDelegate:(id<DPHorizontalScrollableViewControllerDelegate>)delegate rowViewControllers:(NSArray*)rowViewControllers;
+- (instancetype)initWithDelegate:(id<DPHorizontalScrollableViewControllerDelegate>)delegate rowViewControllers:(NSArray*)rowViewControllers;
 
 @property (nonatomic) UIColor* overlayViewBackgroundColor; // clearColor means disabled. default is [UIColor colorWithWhite:0.0 alpha:0.2]
 
