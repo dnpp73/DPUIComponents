@@ -5,8 +5,6 @@
 @interface DPToastViewManager ()
 {
     NSMutableArray* _queueingToastViews;
-    
-    NSHashTable* _observers;
 }
 
 @end
@@ -37,19 +35,18 @@
     self = [super init];
     if (self) {
         _queueingToastViews = [NSMutableArray array];
-        _observers          = [NSHashTable weakObjectsHashTable];
     }
     return self;
 }
 
-#pragma mark - 
+#pragma mark -
 
-- (void)addToastView:(DPToastView*)toastView
+- (void)enqueueToastView:(DPToastView*)toastView // Public
 {
     if ([toastView isKindOfClass:[DPToastView class]] == NO) {
         return;
     }
-    if ([_showingToastView isEqual:toastView]) {
+    if ([_currentToastView isEqual:toastView]) {
         return;
     }
     if ([_queueingToastViews containsObject:toastView]) {
@@ -58,7 +55,58 @@
     
     [_queueingToastViews addObject:toastView];
     if (_showingToastView == NO) {
-#warning それっぽく実装する
+        [self showHeadToastViewIfExist];
+    }
+}
+
+- (void)showHeadToastViewIfExist // Private
+{
+    if (_queueingToastViews.count == 0) {
+        return;
+    }
+    
+    if (_showingToastView) {
+        return;
+    }
+    
+    DPToastView* toastView = _queueingToastViews[0];
+    [_queueingToastViews removeObject:toastView];
+    _currentToastView = toastView;
+    _showingToastView = YES;
+    
+#warning 実装する
+    {
+        [[[[UIApplication sharedApplication] keyWindow] rootViewController].view addSubview:toastView];
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissToastView:toastView];
+        });
+    }
+}
+
+- (void)dismissCurrentToastView // Public
+{
+    [self dismissToastView:_currentToastView];
+}
+
+- (void)dismissToastView:(DPToastView*)toastView // Public
+{
+    if ([toastView isKindOfClass:[DPToastView class]] == NO) {
+        return;
+    }
+    if ([_currentToastView isEqual:toastView] == NO) {
+        return;
+    }
+    
+    void (^comp)(BOOL) = ^(BOOL finished){
+        [toastView removeFromSuperview];
+        _currentToastView = nil;
+        _showingToastView = NO;
+        [self showHeadToastViewIfExist];
+    };
+
+#warning 実装する
+    {
+        comp(YES);
     }
 }
 

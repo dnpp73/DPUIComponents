@@ -20,14 +20,14 @@
 
 #pragma mark - Show Hide
 
-- (void)showAnimated:(BOOL)animated
+- (void)show
 {
-#warning それっぽく実装する
+    [[DPToastViewManager sharedManager] enqueueToastView:self];
 }
 
-- (void)dismissAnimated:(BOOL)animated
+- (void)dismiss
 {
-#warning それっぽく実装する
+    [[DPToastViewManager sharedManager] dismissToastView:self];
 }
 
 @end

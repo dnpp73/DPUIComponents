@@ -3,8 +3,8 @@
 
 @interface DPToastView : UIView
 
-- (void)showAnimated:(BOOL)animated;
-- (void)dismissAnimated:(BOOL)animated;
+- (void)show;
+- (void)dismiss;
 
 @property (nonatomic) NSTimeInterval displayingDuration;
 

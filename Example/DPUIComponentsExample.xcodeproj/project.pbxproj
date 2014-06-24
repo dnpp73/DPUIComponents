@@ -30,6 +30,7 @@
 		19B63EDD1951938800CCCD9C /* DPMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */; };
 		19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
 		19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
+		19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D9EDAD1959B33F004E3382 /* DPTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -98,6 +99,8 @@
 		19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMarqueeLabel.m; sourceTree = "<group>"; };
 		19B63ED61951938800CCCD9C /* UIView+dp_recursiveUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_recursiveUtils.h"; sourceTree = "<group>"; };
 		19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_recursiveUtils.m"; sourceTree = "<group>"; };
+		19D9EDAC1959B33F004E3382 /* DPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPTableViewController.h; sourceTree = "<group>"; };
+		19D9EDAD1959B33F004E3382 /* DPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -171,6 +174,8 @@
 			children = (
 				1930482C195054A10052E551 /* DPAppDelegate.h */,
 				1930482D195054A10052E551 /* DPAppDelegate.m */,
+				19D9EDAC1959B33F004E3382 /* DPTableViewController.h */,
+				19D9EDAD1959B33F004E3382 /* DPTableViewController.m */,
 				19256D071950AE1300969AD5 /* Main.storyboard */,
 				1930482F195054A10052E551 /* Images.xcassets */,
 				19304824195054A10052E551 /* Supporting Files */,
@@ -357,6 +362,7 @@
 				1930482E195054A10052E551 /* DPAppDelegate.m in Sources */,
 				19B63EDA1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */,
 				19759DA51958775900B062C0 /* DPToastView.m in Sources */,
+				19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */,
 				19B63EDC1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
 				19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
 				1930482A195054A10052E551 /* main.m in Sources */,
