@@ -1,5 +1,7 @@
 #import "DPToastView.h"
+#import "DPToastView_Private.h"
 #import "DPToastViewManager.h"
+#import "DPToastViewManager_Private.h"
 
 
 @interface DPToastView ()
@@ -28,6 +30,23 @@
 - (void)dismiss
 {
     [[DPToastViewManager sharedManager] dismissToastView:self];
+}
+
+#pragma mark - 
+
+- (BOOL)isShowing
+{
+    return [[[DPToastViewManager sharedManager] currentToastView] isEqual:self];
+}
+
+- (void)setShowAnimating:(BOOL)showAnimating
+{
+    _showAnimating = showAnimating;
+}
+
+- (void)setDismissAnimating:(BOOL)dismissAnimating
+{
+    _dismissAnimating = dismissAnimating;
 }
 
 @end

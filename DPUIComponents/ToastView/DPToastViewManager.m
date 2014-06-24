@@ -1,5 +1,7 @@
 #import "DPToastViewManager.h"
+#import "DPToastViewManager_Private.h"
 #import "DPToastView.h"
+#import "DPToastView_Private.h"
 
 
 @interface DPToastViewManager ()
@@ -59,6 +61,15 @@
     }
 }
 
+- (void)dequeueToastView:(DPToastView*)toastView // Public
+{
+    if ([_currentToastView isEqual:toastView] == NO) {
+        if ([_queueingToastViews containsObject:toastView]) {
+            [_queueingToastViews removeObject:toastView];
+        }
+    }
+}
+
 - (void)showHeadToastViewIfExist // Private
 {
     if (_queueingToastViews.count == 0) {
@@ -76,20 +87,24 @@
 
     UIViewController* targetViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
     UIView*           targetView           = targetViewController.view;
+
+    [targetView addSubview:toastView];
+    toastView.showAnimating = YES;
+    
+    void (^comp)(BOOL) = ^(BOOL finished){
+        toastView.showAnimating = NO;
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self dismissToastView:toastView];
+        });
+    };
     
     {
-#warning 実装する
+        #warning この括弧内を汎用的になるように実装する
         toastView.hidden = NO;
         toastView.alpha  = 0.0;
-        [targetView addSubview:toastView];
-        
         void (^anim)(void) = ^{
             toastView.alpha = 1.0;
-        };
-        void (^comp)(BOOL) = ^(BOOL finished){
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self dismissToastView:toastView];
-            });
         };
         NSTimeInterval animationDuration = 1.0;
         NSTimeInterval animationDelay    = 0.0;
@@ -103,7 +118,7 @@
     [self dismissToastView:_currentToastView];
 }
 
-- (void)dismissToastView:(DPToastView*)toastView // Public
+- (void)dismissToastView:(DPToastView*)toastView // Private
 {
     if ([toastView isKindOfClass:[DPToastView class]] == NO) {
         return;
@@ -112,15 +127,19 @@
         return;
     }
     
+    toastView.dismissAnimating = YES;
+    
     void (^comp)(BOOL) = ^(BOOL finished){
+        toastView.dismissAnimating = NO;
         [toastView removeFromSuperview];
         _currentToastView = nil;
         _showingToastView = NO;
+        
         [self showHeadToastViewIfExist];
     };
 
     {
-#warning 実装する
+        #warning この括弧内を汎用的になるように実装する
         void (^anim)(void) = ^{
             toastView.alpha = 0.0;
         };
@@ -137,5 +156,12 @@
 {
     return _queueingToastViews.copy;
 }
+
+#ifdef DEBUG
+- (void)printState
+{
+    NSLog(@"%d, %d, %d", _currentToastView.isShowing, _currentToastView.isShowAnimating, _currentToastView.isDismissAnimating);
+}
+#endif
 
 @end
