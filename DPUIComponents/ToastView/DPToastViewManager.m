@@ -157,11 +157,4 @@
     return _queueingToastViews.copy;
 }
 
-#ifdef DEBUG
-- (void)printState
-{
-    NSLog(@"%d, %d, %d", _currentToastView.isShowing, _currentToastView.isShowAnimating, _currentToastView.isDismissAnimating);
-}
-#endif
-
 @end
