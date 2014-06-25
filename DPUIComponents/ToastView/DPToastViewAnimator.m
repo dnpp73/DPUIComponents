@@ -20,8 +20,8 @@
     self = [super init];
     if (self) {
         _toastView = toastView;
-        _showAnimationDuration    = 1.0;
-        _dismissAnimationDuration = 1.0;
+        _showAnimationDuration    = 0.5;
+        _dismissAnimationDuration = 0.5;
     }
     return self;
 }
@@ -36,7 +36,7 @@
     }
     
     _toastView.hidden = NO;
-    _toastView.alpha  = 0.6;
+    _toastView.alpha  = 0.3;
     _toastView.containerView.frame = CGRectOffset(_toastView.bounds, 0, -_toastView.bounds.size.height);
     
     [_toastView.targetView addSubview:_toastView];
@@ -61,7 +61,7 @@
     }
     
     void (^anim)(void) = ^{
-        _toastView.alpha = 0.6;
+        _toastView.alpha = 0.4;
         _toastView.containerView.frame = CGRectOffset(_toastView.bounds, 0, -_toastView.bounds.size.height);
     };
     NSTimeInterval animationDuration = _dismissAnimationDuration;

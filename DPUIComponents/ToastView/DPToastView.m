@@ -28,8 +28,18 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
     if (self) {
         _displayingDuration = 2.0;
         self.clipsToBounds = YES;
+        self.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         _animator = [[DPToastViewAnimator alloc] initWithToastView:self];
         [self initializeSubViews];
+    }
+    return self;
+}
+
+- (instancetype)initWithFrame:(CGRect)frame targetView:(UIView*)targetView
+{
+    self = [self initWithFrame:frame];
+    if (self) {
+        _targetView = targetView;
     }
     return self;
 }
@@ -44,6 +54,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         UIView* backgroundView = [[UIView alloc] initWithFrame:containerView.bounds];
         backgroundView.backgroundColor = [UIColor clearColor];
         backgroundView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        backgroundView.userInteractionEnabled = NO;
         [containerView addSubview:backgroundView];
         _backgroundView = backgroundView;
     }

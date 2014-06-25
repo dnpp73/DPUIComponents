@@ -30,17 +30,27 @@
     if (tableView == self.tableView) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        DPToastView* toastView = [[DPToastView alloc] initWithFrame:[[self class] randomRectForToastView]];
-        UIView* targetView = [[[UIApplication sharedApplication] keyWindow] rootViewController].view;
-        toastView.targetView = targetView;
+        DPToastView* toastView = [[DPToastView alloc] initWithFrame:[self rectForToastView] targetView:[self targetView]];
         {
-            toastView.backgroundView.backgroundColor = [[self class] randomColorForToastViewBackground];
+            toastView.backgroundView.backgroundColor = [self randomColorForToastViewBackground];
         }
         [toastView show];
     }
 }
 
-+ (CGRect)randomRectForToastView
+- (UIView*)targetView
+{
+    return [[[[[UIApplication sharedApplication] delegate] window] rootViewController] view];
+}
+
+- (CGRect)rectForToastView
+{
+    CGRect rect = CGRectMake(0, self.navigationController.navigationBar.frame.size.height, self.view.bounds.size.width, 70);
+    rect = [self.navigationController.navigationBar convertRect:rect toView:[self targetView]];
+    return rect;
+}
+
+- (CGRect)randomRectForToastView
 {
     return CGRectMake(
                       arc4random_uniform(80)+0,
@@ -50,7 +60,7 @@
                       );
 }
 
-+ (UIColor*)randomColorForToastViewBackground
+- (UIColor*)randomColorForToastViewBackground
 {
     return [UIColor colorWithRed:(arc4random_uniform(10)/10.0)
                            green:(arc4random_uniform(10)/10.0)
@@ -78,6 +88,8 @@
 
 - (void)catchToastViewWillShowNotification:(NSNotification*)notification
 {
+    DPToastView* toastView = notification.object;
+    toastView.frame = [self rectForToastView];
 //    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
