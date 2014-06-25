@@ -1,5 +1,4 @@
 #import "DPToastView.h"
-#import "DPToastView_Private.h"
 #import "DPToastViewManager.h"
 #import "DPToastViewManager_Private.h"
 
@@ -73,29 +72,31 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 - (void)dismiss
 {
-    void (^comp)(BOOL) = ^(BOOL finished){
-        _dismissAnimating = NO;
-        _showing = NO;
-        [self removeFromSuperview];
-        [[DPToastViewManager sharedManager] setCurrentToastView:nil];
-        [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewDidDismissNotification object:self];
-        [[DPToastViewManager sharedManager] showHeadToastViewIfExist];
-    };
-    
-    _dismissAnimating = YES;
-    [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewWillDismissNotification object:self];
-    
-    {
-        #warning この括弧内を汎用的になるように実装する
-        void (^anim)(void) = ^{
-            self.alpha = 0.0;
+    if ([[DPToastViewManager sharedManager].currentToastView isEqual:self]) {
+        void (^comp)(BOOL) = ^(BOOL finished){
+            _dismissAnimating = NO;
+            _showing = NO;
+            [self removeFromSuperview];
+            [[DPToastViewManager sharedManager] setCurrentToastView:nil];
+            [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewDidDismissNotification object:self];
+            [[DPToastViewManager sharedManager] showHeadToastViewIfExist];
         };
-        NSTimeInterval animationDuration = 1.0;
-        NSTimeInterval animationDelay    = 0.0;
-        UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
-        [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
+        
+        _dismissAnimating = YES;
+        [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewWillDismissNotification object:self];
+        
+        {
+            #warning この括弧内を汎用的になるように実装する
+            void (^anim)(void) = ^{
+                self.alpha = 0.0;
+            };
+            NSTimeInterval animationDuration = 1.0;
+            NSTimeInterval animationDelay    = 0.0;
+            UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
+            [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
+        }
+        
     }
-
 }
 
 @end

@@ -1,7 +1,6 @@
 #import "DPToastViewManager.h"
 #import "DPToastViewManager_Private.h"
 #import "DPToastView.h"
-#import "DPToastView_Private.h"
 
 
 @interface DPToastViewManager ()

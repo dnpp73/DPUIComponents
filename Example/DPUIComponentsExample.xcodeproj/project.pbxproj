@@ -92,7 +92,6 @@
 		19759DA31958775900B062C0 /* DPToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastView.h; sourceTree = "<group>"; };
 		19759DA41958775900B062C0 /* DPToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastView.m; sourceTree = "<group>"; };
 		198AB3291959DB74006820FA /* DPToastViewManager_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPToastViewManager_Private.h; sourceTree = "<group>"; };
-		198AB32A1959DBD8006820FA /* DPToastView_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPToastView_Private.h; sourceTree = "<group>"; };
 		19B63ECD1951938800CCCD9C /* UIView+dp_fadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_fadeInOut.h"; sourceTree = "<group>"; };
 		19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_fadeInOut.m"; sourceTree = "<group>"; };
 		19B63ED01951938800CCCD9C /* DPHorizontalScrollableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHorizontalScrollableViewController.h; sourceTree = "<group>"; };
@@ -136,7 +135,6 @@
 				198AB3291959DB74006820FA /* DPToastViewManager_Private.h */,
 				1924F57719586A950090DB7A /* DPToastViewManager.m */,
 				19759DA31958775900B062C0 /* DPToastView.h */,
-				198AB32A1959DBD8006820FA /* DPToastView_Private.h */,
 				19759DA41958775900B062C0 /* DPToastView.m */,
 			);
 			path = ToastView;
