@@ -20,6 +20,8 @@
 		19304838195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304839195054A10052E551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304821195054A10052E551 /* UIKit.framework */; };
 		19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304842195054A10052E551 /* DPUIComponentsExampleTests.m */; };
+		1936E6D6195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */; };
+		1936E6D7195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */; };
 		19759DA51958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
 		19759DA61958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
 		19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
@@ -89,6 +91,8 @@
 		19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPUIComponentsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		19304836195054A10052E551 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
 		19304842195054A10052E551 /* DPUIComponentsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPUIComponentsExampleTests.m; sourceTree = "<group>"; };
+		1936E6D4195AE26D00CBCBC7 /* DPToastViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastViewAnimator.h; sourceTree = "<group>"; };
+		1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastViewAnimator.m; sourceTree = "<group>"; };
 		19759DA31958775900B062C0 /* DPToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastView.h; sourceTree = "<group>"; };
 		19759DA41958775900B062C0 /* DPToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastView.m; sourceTree = "<group>"; };
 		198AB3291959DB74006820FA /* DPToastViewManager_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPToastViewManager_Private.h; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				1924F57719586A950090DB7A /* DPToastViewManager.m */,
 				19759DA31958775900B062C0 /* DPToastView.h */,
 				19759DA41958775900B062C0 /* DPToastView.m */,
+				1936E6D4195AE26D00CBCBC7 /* DPToastViewAnimator.h */,
+				1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */,
 			);
 			path = ToastView;
 			sourceTree = "<group>";
@@ -367,6 +373,7 @@
 				19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */,
 				19B63EDC1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
 				19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
+				1936E6D6195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */,
 				1930482A195054A10052E551 /* main.m in Sources */,
 				1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */,
 				19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
@@ -379,6 +386,7 @@
 			files = (
 				19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
 				19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
+				1936E6D7195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */,
 				1924F57919586A950090DB7A /* DPToastViewManager.m in Sources */,
 				19B63EDB1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */,
 				19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */,

@@ -1,6 +1,7 @@
 #import "DPToastView.h"
 #import "DPToastViewManager.h"
 #import "DPToastViewManager_Private.h"
+#import "DPToastViewAnimator.h"
 
 
 NSString* const DPToastViewWillShowNotification    = @"DPToastViewWillShowNotification";
@@ -16,13 +17,47 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 @implementation DPToastView
 
+- (instancetype)init
+{
+    return [self initWithFrame:CGRectZero];
+}
+
 - (instancetype)initWithFrame:(CGRect)frame
 {
     self = [super initWithFrame:frame];
     if (self) {
         _displayingDuration = 2.0;
+        self.clipsToBounds = YES;
+        _animator = [[DPToastViewAnimator alloc] initWithToastView:self];
+        [self initializeSubViews];
     }
     return self;
+}
+
+- (void)initializeSubViews
+{
+    UIView* containerView = [[UIView alloc] initWithFrame:self.bounds];
+    containerView.backgroundColor = [UIColor clearColor];
+    containerView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+    
+    {
+        UIView* backgroundView = [[UIView alloc] initWithFrame:containerView.bounds];
+        backgroundView.backgroundColor = [UIColor clearColor];
+        backgroundView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        [containerView addSubview:backgroundView];
+        _backgroundView = backgroundView;
+    }
+    
+    {
+        UIView* contentsView = [[UIView alloc] initWithFrame:containerView.bounds];
+        contentsView.backgroundColor = [UIColor clearColor];
+        contentsView.autoresizingMask = UIViewAutoresizingFlexibleHeight|UIViewAutoresizingFlexibleWidth;
+        [containerView addSubview:contentsView];
+        _contentsView = contentsView;
+    }
+    
+    [self addSubview:containerView];
+    _containerView = containerView;
 }
 
 #pragma mark - Show Hide
@@ -45,25 +80,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
             });
         };
         
-        {
-            #warning この括弧内を汎用的になるように実装する
-            self.hidden = NO;
-            self.alpha  = 0.0;
-            
-            UIViewController* targetViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-            UIView*           targetView           = targetViewController.view;
-            
-            [targetView addSubview:self];
-            
-            void (^anim)(void) = ^{
-                self.alpha = 1.0;
-            };
-            NSTimeInterval animationDuration = 1.0;
-            NSTimeInterval animationDelay    = 0.0;
-            UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
-            [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
-        }
-        
+        [_animator showAnimationWithCallback:comp];
     }
     else {
         [[DPToastViewManager sharedManager] enqueueToastView:self];
@@ -85,17 +102,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         _dismissAnimating = YES;
         [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewWillDismissNotification object:self];
         
-        {
-            #warning この括弧内を汎用的になるように実装する
-            void (^anim)(void) = ^{
-                self.alpha = 0.0;
-            };
-            NSTimeInterval animationDuration = 1.0;
-            NSTimeInterval animationDelay    = 0.0;
-            UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
-            [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
-        }
-        
+        [_animator dismissAnimationWithCallback:comp];        
     }
 }
 

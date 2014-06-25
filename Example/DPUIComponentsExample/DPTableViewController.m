@@ -30,21 +30,32 @@
     if (tableView == self.tableView) {
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
-        CGRect frame = CGRectMake(
-                                  arc4random_uniform(80)+0,
-                                  arc4random_uniform(80)+0,
-                                  arc4random_uniform(200)+100,
-                                  arc4random_uniform(80)+50
-                                  );
-        DPToastView* toastView = [[DPToastView alloc] initWithFrame:frame];
+        DPToastView* toastView = [[DPToastView alloc] initWithFrame:[[self class] randomRectForToastView]];
+        UIView* targetView = [[[UIApplication sharedApplication] keyWindow] rootViewController].view;
+        toastView.targetView = targetView;
         {
-            toastView.backgroundColor = [UIColor colorWithRed:(arc4random_uniform(10)/10.0)
-                                                        green:(arc4random_uniform(10)/10.0)
-                                                         blue:(arc4random_uniform(10)/10.0)
-                                                        alpha:(arc4random_uniform(5)/10.0+0.5)];
+            toastView.backgroundView.backgroundColor = [[self class] randomColorForToastViewBackground];
         }
         [toastView show];
     }
+}
+
++ (CGRect)randomRectForToastView
+{
+    return CGRectMake(
+                      arc4random_uniform(80)+0,
+                      arc4random_uniform(80)+0,
+                      arc4random_uniform(200)+100,
+                      arc4random_uniform(80)+50
+                      );
+}
+
++ (UIColor*)randomColorForToastViewBackground
+{
+    return [UIColor colorWithRed:(arc4random_uniform(10)/10.0)
+                           green:(arc4random_uniform(10)/10.0)
+                            blue:(arc4random_uniform(10)/10.0)
+                           alpha:(arc4random_uniform(5)/10.0+0.5)];
 }
 
 #pragma mark - Notification
@@ -67,22 +78,22 @@
 
 - (void)catchToastViewWillShowNotification:(NSNotification*)notification
 {
-    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+//    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
 - (void)catchToastViewDidShowNotification:(NSNotification*)notification
 {
-    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+//    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
 - (void)catchToastViewWillDismissNotification:(NSNotification*)notification
 {
-    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+//    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
 - (void)catchToastViewDidDismissNotification:(NSNotification*)notification
 {
-    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+//    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
 @end
