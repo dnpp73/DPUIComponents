@@ -3,6 +3,7 @@
 
 @interface DPToastViewManager (dp_private)
 
-- (void)dismissToastView:(DPToastView*)toastView;
+- (void)setCurrentToastView:(DPToastView*)toastView;
+- (void)showHeadToastViewIfExist;
 
 @end

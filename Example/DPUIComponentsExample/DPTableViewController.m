@@ -9,6 +9,22 @@
 
 @implementation DPTableViewController
 
+#pragma mark -
+
+- (void)viewDidAppear:(BOOL)animated
+{
+    [super viewDidAppear:animated];
+    [self addNotificationObserver];
+}
+
+- (void)viewWillDisappear:(BOOL)animated
+{
+    [super viewWillDisappear:animated];
+    [self removeNotificationObserver];
+}
+
+#pragma mark -
+
 - (void)tableView:(UITableView*)tableView didSelectRowAtIndexPath:(NSIndexPath*)indexPath
 {
     if (tableView == self.tableView) {
@@ -29,6 +45,44 @@
         }
         [toastView show];
     }
+}
+
+#pragma mark - Notification
+
+- (void)addNotificationObserver
+{
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(catchToastViewWillShowNotification:)    name:DPToastViewWillShowNotification    object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(catchToastViewDidShowNotification:)     name:DPToastViewDidShowNotification     object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(catchToastViewWillDismissNotification:) name:DPToastViewWillDismissNotification object:nil];
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(catchToastViewDidDismissNotification:)  name:DPToastViewDidDismissNotification  object:nil];
+}
+
+- (void)removeNotificationObserver
+{
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DPToastViewWillShowNotification    object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DPToastViewDidShowNotification     object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DPToastViewWillDismissNotification object:nil];
+    [[NSNotificationCenter defaultCenter] removeObserver:self name:DPToastViewDidDismissNotification  object:nil];
+}
+
+- (void)catchToastViewWillShowNotification:(NSNotification*)notification
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+}
+
+- (void)catchToastViewDidShowNotification:(NSNotification*)notification
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+}
+
+- (void)catchToastViewWillDismissNotification:(NSNotification*)notification
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
+}
+
+- (void)catchToastViewDidDismissNotification:(NSNotification*)notification
+{
+    NSLog(@"%@, %@", NSStringFromSelector(_cmd), notification.object);
 }
 
 @end

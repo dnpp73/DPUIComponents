@@ -56,9 +56,6 @@
     }
     
     [_queueingToastViews addObject:toastView];
-    if (_showingToastView == NO) {
-        [self showHeadToastViewIfExist];
-    }
 }
 
 - (void)dequeueToastView:(DPToastView*)toastView // Public
@@ -76,78 +73,12 @@
         return;
     }
     
-    if (_showingToastView) {
+    if (_currentToastView) {
         return;
     }
     
     DPToastView* toastView = _queueingToastViews[0];
-    [_queueingToastViews removeObject:toastView];
-    _currentToastView = toastView;
-    _showingToastView = YES;
-
-    UIViewController* targetViewController = [[[UIApplication sharedApplication] keyWindow] rootViewController];
-    UIView*           targetView           = targetViewController.view;
-
-    [targetView addSubview:toastView];
-    toastView.showAnimating = YES;
-    
-    void (^comp)(BOOL) = ^(BOOL finished){
-        toastView.showAnimating = NO;
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(toastView.displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [self dismissToastView:toastView];
-        });
-    };
-    
-    {
-        #warning この括弧内を汎用的になるように実装する
-        toastView.hidden = NO;
-        toastView.alpha  = 0.0;
-        void (^anim)(void) = ^{
-            toastView.alpha = 1.0;
-        };
-        NSTimeInterval animationDuration = 1.0;
-        NSTimeInterval animationDelay    = 0.0;
-        UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
-        [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
-    }
-}
-
-- (void)dismissCurrentToastView // Public
-{
-    [self dismissToastView:_currentToastView];
-}
-
-- (void)dismissToastView:(DPToastView*)toastView // Private
-{
-    if ([toastView isKindOfClass:[DPToastView class]] == NO) {
-        return;
-    }
-    if ([_currentToastView isEqual:toastView] == NO) {
-        return;
-    }
-    
-    toastView.dismissAnimating = YES;
-    
-    void (^comp)(BOOL) = ^(BOOL finished){
-        toastView.dismissAnimating = NO;
-        [toastView removeFromSuperview];
-        _currentToastView = nil;
-        _showingToastView = NO;
-        
-        [self showHeadToastViewIfExist];
-    };
-
-    {
-        #warning この括弧内を汎用的になるように実装する
-        void (^anim)(void) = ^{
-            toastView.alpha = 0.0;
-        };
-        NSTimeInterval animationDuration = 1.0;
-        NSTimeInterval animationDelay    = 0.0;
-        UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
-        [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
-    }
+    [toastView show];
 }
 
 #pragma mark - getter
@@ -155,6 +86,13 @@
 - (NSArray*)queueingToastViews
 {
     return _queueingToastViews.copy;
+}
+
+#pragma mark -
+
+- (void)setCurrentToastView:(DPToastView*)toastView
+{
+    _currentToastView = toastView;
 }
 
 @end

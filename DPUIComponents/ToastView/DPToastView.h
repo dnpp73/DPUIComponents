@@ -1,6 +1,12 @@
 #import <UIKit/UIKit.h>
 
 
+extern NSString* const DPToastViewWillShowNotification;
+extern NSString* const DPToastViewDidShowNotification;
+extern NSString* const DPToastViewWillDismissNotification;
+extern NSString* const DPToastViewDidDismissNotification;
+
+
 @interface DPToastView : UIView
 
 - (void)show;
