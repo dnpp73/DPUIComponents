@@ -142,19 +142,36 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
     if (panGestureRecognizer == _panGestureRecognizer) {
         static CGPoint beganLocation;
         static CGRect  beganContainerFrame;
+        static CGFloat beganAlpha;
         
         UIGestureRecognizerState state = panGestureRecognizer.state;
         if (state == UIGestureRecognizerStateBegan) {
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismiss) object:nil];
             beganLocation = [panGestureRecognizer locationInView:self];
             beganContainerFrame = _containerView.frame;
+            beganAlpha = _containerView.alpha;
         }
         else if (state == UIGestureRecognizerStateChanged) {
             CGPoint location = [panGestureRecognizer locationInView:self];
-            CGFloat y = location.y - beganLocation.y;
-            y = MIN(y, 0);
-            CGRect rect = CGRectOffset(beganContainerFrame, 0, y);
-            _containerView.frame = rect;
+            {
+                CGFloat y = location.y - beganLocation.y;
+                y = MIN(y, 0);
+                CGRect rect = CGRectOffset(beganContainerFrame, 0, y);
+                _containerView.frame = rect;
+            }
+            {
+                CGFloat alpha = beganAlpha;
+                {   // 0.2 から 1.0 の間を取る感じにするやつ
+                    alpha = (location.y - beganLocation.y) / beganContainerFrame.size.height + 1.0;
+                    alpha = MIN(1.0, alpha);
+                    alpha = MAX(0.0, alpha);
+                    alpha *= beganAlpha;
+                    CGFloat d = 0.2;
+                    alpha *= (1.0-d)/1.0;
+                    alpha += d;
+                }
+                _containerView.alpha = alpha;
+            }
         }
         else if (state == UIGestureRecognizerStateEnded || state == UIGestureRecognizerStateCancelled) {
             if (state == UIGestureRecognizerStateCancelled) {
@@ -165,19 +182,29 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
             }
             
             CGPoint v = [panGestureRecognizer velocityInView:self];
-            if (v.y < -100 || _containerView.frame.origin.y <= -(_containerView.frame.size.height)) {
-                [self dismiss];
+            if (v.y < -60 || _containerView.frame.origin.y <= -(_containerView.frame.size.height)) {
+                void (^anim)(void) = ^{
+                    _containerView.frame = CGRectOffset(beganContainerFrame, 0, -beganContainerFrame.size.height);
+                    _containerView.alpha = 0.2;
+                };
+                void (^comp)(BOOL) = ^(BOOL finished){
+                    [self dismiss];
+                };
+                NSTimeInterval animationDuration = 40.0 / fabs(v.y);
+                NSTimeInterval animationDelay    = 0.0;
+                UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseOut|UIViewAnimationOptionBeginFromCurrentState;
+                [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
             } else {
                 panGestureRecognizer.enabled = NO;
                 void (^anim)(void) = ^{
                     _containerView.frame = beganContainerFrame;
+                    _containerView.alpha = beganAlpha;
                 };
                 void (^comp)(BOOL) = ^(BOOL finished){
                     panGestureRecognizer.enabled = YES;
                     [self performSelector:@selector(dismiss) withObject:nil afterDelay:_displayingDuration];
                 };
                 NSTimeInterval animationDuration = (_containerView.frame.size.height - (_containerView.frame.size.height + _containerView.frame.origin.y)) * 0.005 + 0.08;
-                NSLog(@"%f", animationDuration);
                 NSTimeInterval animationDelay    = 0.0;
                 UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
                 [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
