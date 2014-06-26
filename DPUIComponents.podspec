@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name                  = "DPUIComponents"
-  s.version               = "0.1"
+  s.version               = "0.2"
   s.summary               = "User Interfaces for UIKit"
   s.author                = { "Yusuke SUGAMIYA" => "yusuke.dnpp@gmail.com" }
   s.homepage              = "https://github.com/dnpp73/DPUIComponents"
