@@ -2,6 +2,7 @@
 #import "DPToastViewManager.h"
 #import "DPToastViewManager_Private.h"
 #import "DPToastViewAnimator.h"
+#import "UIView+dp_recursiveUtils.h"
 
 
 NSString* const DPToastViewWillShowNotification    = @"DPToastViewWillShowNotification";
@@ -12,7 +13,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 @interface DPToastView ()
 {
-    __weak UISwipeGestureRecognizer* _swipeGestureRecognizer;
+    __weak UIPanGestureRecognizer* _panGestureRecognizer;
 }
 
 @end
@@ -29,7 +30,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 {
     self = [super initWithFrame:frame];
     if (self) {
-        _displayingDuration = 2.0;
+        _displayingDuration = 2.5;
         _animator = [[DPToastViewAnimator alloc] initWithToastView:self];
         self.clipsToBounds = YES;
         self.hidden = YES;
@@ -37,10 +38,9 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         [self initializeSubViews];
         
         {
-            UISwipeGestureRecognizer* gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
-            gr.direction = UISwipeGestureRecognizerDirectionUp;
-            [self addGestureRecognizer:gr];
-            _swipeGestureRecognizer = gr;
+            UIPanGestureRecognizer* gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
+            [_containerView addGestureRecognizer:gr];
+            _panGestureRecognizer = gr;
         }
     }
     return self;
@@ -115,6 +115,11 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 {
     [NSObject cancelPreviousPerformRequestsWithTarget:self selector:_cmd object:nil];
     
+    if (self.dp_recursiveTrackingCheck) {
+        [self performSelector:@selector(dismiss) withObject:nil afterDelay:_displayingDuration];
+        return;
+    }
+    
     if ([[DPToastViewManager sharedManager].currentToastView isEqual:self]) {
         void (^comp)(BOOL) = ^(BOOL finished){
             _dismissAnimating = NO;
@@ -132,10 +137,53 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
     }
 }
 
-- (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)swipeGestureRecognizer
+- (void)handlePanGestureRecognizer:(UIPanGestureRecognizer*)panGestureRecognizer
 {
-    if (swipeGestureRecognizer == _swipeGestureRecognizer) {
-        [self dismiss];
+    if (panGestureRecognizer == _panGestureRecognizer) {
+        static CGPoint beganLocation;
+        static CGRect  beganContainerFrame;
+        
+        UIGestureRecognizerState state = panGestureRecognizer.state;
+        if (state == UIGestureRecognizerStateBegan) {
+            [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismiss) object:nil];
+            beganLocation = [panGestureRecognizer locationInView:self];
+            beganContainerFrame = _containerView.frame;
+        }
+        else if (state == UIGestureRecognizerStateChanged) {
+            CGPoint location = [panGestureRecognizer locationInView:self];
+            CGFloat y = location.y - beganLocation.y;
+            y = MIN(y, 0);
+            CGRect rect = CGRectOffset(beganContainerFrame, 0, y);
+            _containerView.frame = rect;
+        }
+        else if (state == UIGestureRecognizerStateEnded || state == UIGestureRecognizerStateCancelled) {
+            if (state == UIGestureRecognizerStateCancelled) {
+                ;
+            }
+            else {
+                
+            }
+            
+            CGPoint v = [panGestureRecognizer velocityInView:self];
+            if (v.y < -100 || _containerView.frame.origin.y <= -(_containerView.frame.size.height)) {
+                [self dismiss];
+            } else {
+                panGestureRecognizer.enabled = NO;
+                void (^anim)(void) = ^{
+                    _containerView.frame = beganContainerFrame;
+                };
+                void (^comp)(BOOL) = ^(BOOL finished){
+                    panGestureRecognizer.enabled = YES;
+                    [self performSelector:@selector(dismiss) withObject:nil afterDelay:_displayingDuration];
+                };
+                NSTimeInterval animationDuration = (_containerView.frame.size.height - (_containerView.frame.size.height + _containerView.frame.origin.y)) * 0.005 + 0.08;
+                NSLog(@"%f", animationDuration);
+                NSTimeInterval animationDelay    = 0.0;
+                UIViewAnimationOptions options = UIViewAnimationOptionCurveEaseInOut|UIViewAnimationOptionBeginFromCurrentState;
+                [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
+            }
+            
+        }
     }
 }
 
