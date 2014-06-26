@@ -24,6 +24,7 @@
 		1936E6D7195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */; };
 		19759DA51958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
 		19759DA61958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
+		1998CBFE195BF44200366FA5 /* DPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998CBFD195BF44200366FA5 /* DPNavigationController.m */; };
 		19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
 		19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
 		19B63EDA1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED11951938800CCCD9C /* DPHorizontalScrollableViewController.m */; };
@@ -32,6 +33,7 @@
 		19B63EDD1951938800CCCD9C /* DPMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */; };
 		19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
 		19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
+		19D97CEB195C1B4300AF1538 /* DPModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D97CEA195C1B4300AF1538 /* DPModalViewController.m */; };
 		19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D9EDAD1959B33F004E3382 /* DPTableViewController.m */; };
 /* End PBXBuildFile section */
 
@@ -96,6 +98,8 @@
 		19759DA31958775900B062C0 /* DPToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastView.h; sourceTree = "<group>"; };
 		19759DA41958775900B062C0 /* DPToastView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastView.m; sourceTree = "<group>"; };
 		198AB3291959DB74006820FA /* DPToastViewManager_Private.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPToastViewManager_Private.h; sourceTree = "<group>"; };
+		1998CBFC195BF44200366FA5 /* DPNavigationController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPNavigationController.h; sourceTree = "<group>"; };
+		1998CBFD195BF44200366FA5 /* DPNavigationController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPNavigationController.m; sourceTree = "<group>"; };
 		19B63ECD1951938800CCCD9C /* UIView+dp_fadeInOut.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_fadeInOut.h"; sourceTree = "<group>"; };
 		19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_fadeInOut.m"; sourceTree = "<group>"; };
 		19B63ED01951938800CCCD9C /* DPHorizontalScrollableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPHorizontalScrollableViewController.h; sourceTree = "<group>"; };
@@ -104,6 +108,8 @@
 		19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMarqueeLabel.m; sourceTree = "<group>"; };
 		19B63ED61951938800CCCD9C /* UIView+dp_recursiveUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_recursiveUtils.h"; sourceTree = "<group>"; };
 		19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_recursiveUtils.m"; sourceTree = "<group>"; };
+		19D97CE9195C1B4300AF1538 /* DPModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPModalViewController.h; sourceTree = "<group>"; };
+		19D97CEA195C1B4300AF1538 /* DPModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPModalViewController.m; sourceTree = "<group>"; };
 		19D9EDAC1959B33F004E3382 /* DPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPTableViewController.h; sourceTree = "<group>"; };
 		19D9EDAD1959B33F004E3382 /* DPTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -182,8 +188,12 @@
 			children = (
 				1930482C195054A10052E551 /* DPAppDelegate.h */,
 				1930482D195054A10052E551 /* DPAppDelegate.m */,
+				1998CBFC195BF44200366FA5 /* DPNavigationController.h */,
+				1998CBFD195BF44200366FA5 /* DPNavigationController.m */,
 				19D9EDAC1959B33F004E3382 /* DPTableViewController.h */,
 				19D9EDAD1959B33F004E3382 /* DPTableViewController.m */,
+				19D97CE9195C1B4300AF1538 /* DPModalViewController.h */,
+				19D97CEA195C1B4300AF1538 /* DPModalViewController.m */,
 				19256D071950AE1300969AD5 /* Main.storyboard */,
 				1930482F195054A10052E551 /* Images.xcassets */,
 				19304824195054A10052E551 /* Supporting Files */,
@@ -377,6 +387,8 @@
 				1930482A195054A10052E551 /* main.m in Sources */,
 				1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */,
 				19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
+				19D97CEB195C1B4300AF1538 /* DPModalViewController.m in Sources */,
+				1998CBFE195BF44200366FA5 /* DPNavigationController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

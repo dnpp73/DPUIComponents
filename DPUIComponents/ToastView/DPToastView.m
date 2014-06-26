@@ -11,6 +11,9 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 
 @interface DPToastView ()
+{
+    __weak UISwipeGestureRecognizer* _swipeGestureRecognizer;
+}
 
 @end
 
@@ -27,19 +30,18 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
     self = [super initWithFrame:frame];
     if (self) {
         _displayingDuration = 2.0;
-        self.clipsToBounds = YES;
-        self.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         _animator = [[DPToastViewAnimator alloc] initWithToastView:self];
+        self.clipsToBounds = YES;
+        self.hidden = YES;
+        self.autoresizingMask = UIViewAutoresizingFlexibleBottomMargin|UIViewAutoresizingFlexibleWidth;
         [self initializeSubViews];
-    }
-    return self;
-}
-
-- (instancetype)initWithFrame:(CGRect)frame targetView:(UIView*)targetView
-{
-    self = [self initWithFrame:frame];
-    if (self) {
-        _targetView = targetView;
+        
+        {
+            UISwipeGestureRecognizer* gr = [[UISwipeGestureRecognizer alloc] initWithTarget:self action:@selector(handleSwipeGestureRecognizer:)];
+            gr.direction = UISwipeGestureRecognizerDirectionUp;
+            [self addGestureRecognizer:gr];
+            _swipeGestureRecognizer = gr;
+        }
     }
     return self;
 }
@@ -73,8 +75,21 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 #pragma mark - Show Hide
 
-- (void)show
+- (void)showInView:(UIView*)targetView
 {
+    if (targetView == nil) {
+        [[DPToastViewManager sharedManager] dequeueToastView:self];
+        [self removeFromSuperview];
+        if ([DPToastViewManager sharedManager].currentToastView == nil) {
+            [[DPToastViewManager sharedManager] showHeadToastViewIfExist];
+        }
+        return;
+    }
+    
+    if (targetView != self.superview) {
+        [targetView addSubview:self];
+    }
+    
     if ([DPToastViewManager sharedManager].currentToastView == nil) {
         _showAnimating = YES;
         _showing = YES;
@@ -86,9 +101,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
             _showAnimating = NO;
             [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewDidShowNotification object:self];
             
-            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(_displayingDuration * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-                [self dismiss];
-            });
+            [self performSelector:@selector(dismiss) withObject:nil afterDelay:_displayingDuration];
         };
         
         [_animator showAnimationWithCallback:comp];
@@ -100,6 +113,8 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 
 - (void)dismiss
 {
+    [NSObject cancelPreviousPerformRequestsWithTarget:self selector:_cmd object:nil];
+    
     if ([[DPToastViewManager sharedManager].currentToastView isEqual:self]) {
         void (^comp)(BOOL) = ^(BOOL finished){
             _dismissAnimating = NO;
@@ -114,6 +129,13 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         [[NSNotificationCenter defaultCenter] postNotificationName:DPToastViewWillDismissNotification object:self];
         
         [_animator dismissAnimationWithCallback:comp];        
+    }
+}
+
+- (void)handleSwipeGestureRecognizer:(UISwipeGestureRecognizer*)swipeGestureRecognizer
+{
+    if (swipeGestureRecognizer == _swipeGestureRecognizer) {
+        [self dismiss];
     }
 }
 

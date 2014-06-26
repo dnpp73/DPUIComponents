@@ -20,15 +20,15 @@
     self = [super init];
     if (self) {
         _toastView = toastView;
-        _showAnimationDuration    = 0.5;
-        _dismissAnimationDuration = 0.5;
+        _showAnimationDuration    = 0.4;
+        _dismissAnimationDuration = 0.4;
     }
     return self;
 }
 
 - (void)showAnimationWithCallback:(void (^)(BOOL))callback
 {
-    if (_toastView == nil || _toastView.targetView == nil) {
+    if (_toastView == nil || _toastView.superview == nil) {
         if (callback) {
             callback(NO);
         }
@@ -38,8 +38,6 @@
     _toastView.hidden = NO;
     _toastView.alpha  = 0.3;
     _toastView.containerView.frame = CGRectOffset(_toastView.bounds, 0, -_toastView.bounds.size.height);
-    
-    [_toastView.targetView addSubview:_toastView];
     
     void (^anim)(void) = ^{
         _toastView.alpha = 1.0;
@@ -53,7 +51,7 @@
 
 - (void)dismissAnimationWithCallback:(void (^)(BOOL))callback
 {
-    if (_toastView == nil || _toastView.targetView == nil) {
+    if (_toastView == nil || _toastView.superview == nil) {
         if (callback) {
             callback(NO);
         }
