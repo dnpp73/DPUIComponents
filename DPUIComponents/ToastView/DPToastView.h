@@ -14,6 +14,7 @@ extern NSString* const DPToastViewDidDismissNotification;
 
 @property (nonatomic, readonly) DPToastViewAnimator* animator;
 - (void)showInView:(UIView*)targetView;
+@property (nonatomic, weak) UIView* targetView;
 - (void)dismiss;
 
 @property (nonatomic) NSTimeInterval displayingDuration;

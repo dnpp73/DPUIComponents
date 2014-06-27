@@ -77,7 +77,7 @@
     }
     
     DPToastView* toastView = _queueingToastViews[0];
-    [toastView showInView:toastView.superview];
+    [toastView showInView:toastView.targetView];
 }
 
 #pragma mark - getter

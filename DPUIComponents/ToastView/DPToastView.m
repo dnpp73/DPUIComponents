@@ -86,11 +86,12 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         return;
     }
     
-    if (targetView != self.superview) {
-        [targetView addSubview:self];
-    }
+    _targetView = targetView;
     
     if ([DPToastViewManager sharedManager].currentToastView == nil) {
+        if (targetView != self.superview) {
+            [targetView addSubview:self];
+        }
         _showAnimating = YES;
         _showing = YES;
         [[DPToastViewManager sharedManager] dequeueToastView:self];
