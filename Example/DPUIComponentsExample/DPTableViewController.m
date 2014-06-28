@@ -2,7 +2,7 @@
 #import "DPToastView.h"
 
 
-@interface DPTableViewController ()
+@interface DPTableViewController () <DPToastViewDelegate>
 
 @end
 
@@ -17,6 +17,7 @@
         [tableView deselectRowAtIndexPath:indexPath animated:YES];
         
         DPToastView* toastView = [[DPToastView alloc] initWithFrame:[self rectForToastView]];
+        toastView.delegate = self;
         {
             toastView.backgroundView.backgroundColor = [self randomColorForToastViewBackground];
         }
@@ -51,6 +52,13 @@
 - (IBAction)unwindToTableViewControllerFromModalViewController:(UIStoryboardSegue*)segue
 {
     [segue.sourceViewController dismissViewControllerAnimated:YES completion:nil];
+}
+
+#pragma mark - DPToastViewDelegate
+
+- (void)toastViewDidTapped:(DPToastView*)toastView
+{
+    NSLog(@"%@ %@", NSStringFromSelector(_cmd), toastView);
 }
 
 @end

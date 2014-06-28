@@ -14,6 +14,7 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
 @interface DPToastView ()
 {
     __weak UIPanGestureRecognizer* _panGestureRecognizer;
+    __weak UITapGestureRecognizer* _tapGestureRecognizer;
 }
 
 @end
@@ -38,9 +39,15 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         [self initializeSubViews];
         
         {
-            UIPanGestureRecognizer* gr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
-            [_containerView addGestureRecognizer:gr];
-            _panGestureRecognizer = gr;
+            UIPanGestureRecognizer* pgr = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(handlePanGestureRecognizer:)];
+            [_containerView addGestureRecognizer:pgr];
+            _panGestureRecognizer = pgr;
+            
+            UITapGestureRecognizer* tgr = [[UITapGestureRecognizer alloc] initWithTarget:self action:@selector(handleTapGestureRecognizer:)];
+            [_containerView addGestureRecognizer:tgr];
+            _tapGestureRecognizer = tgr;
+            
+            [_tapGestureRecognizer requireGestureRecognizerToFail:_panGestureRecognizer];
         }
     }
     return self;
@@ -138,6 +145,8 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
     }
 }
 
+#pragma mark - UIGestureRecognizer
+
 - (void)handlePanGestureRecognizer:(UIPanGestureRecognizer*)panGestureRecognizer
 {
     if (panGestureRecognizer == _panGestureRecognizer) {
@@ -148,11 +157,14 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
         UIGestureRecognizerState state = panGestureRecognizer.state;
         if (state == UIGestureRecognizerStateBegan) {
             [NSObject cancelPreviousPerformRequestsWithTarget:self selector:@selector(dismiss) object:nil];
+            _tracking = YES;
             beganLocation = [panGestureRecognizer locationInView:self];
             beganContainerFrame = _containerView.frame;
             beganAlpha = _containerView.alpha;
         }
         else if (state == UIGestureRecognizerStateChanged) {
+            _dragging = YES;
+            
             CGPoint location = [panGestureRecognizer locationInView:self];
             {
                 CGFloat y = location.y - beganLocation.y;
@@ -181,6 +193,9 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
             else {
                 
             }
+            
+            _tracking = NO;
+            _dragging = NO;
             
             CGPoint v = [panGestureRecognizer velocityInView:self];
             if (v.y < -60 || _containerView.frame.origin.y <= -(_containerView.frame.size.height)) {
@@ -211,6 +226,15 @@ NSString* const DPToastViewDidDismissNotification  = @"DPToastViewDidDismissNoti
                 [UIView animateWithDuration:animationDuration delay:animationDelay options:options animations:anim completion:comp];
             }
             
+        }
+    }
+}
+
+- (void)handleTapGestureRecognizer:(UITapGestureRecognizer*)tapGestureRecognizer
+{
+    if (tapGestureRecognizer == _tapGestureRecognizer) {
+        if ([self.delegate respondsToSelector:@selector(toastViewDidTapped:)]) {
+            [self.delegate toastViewDidTapped:self];
         }
     }
 }

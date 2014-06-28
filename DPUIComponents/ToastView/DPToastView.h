@@ -7,7 +7,8 @@ extern NSString* const DPToastViewWillDismissNotification;
 extern NSString* const DPToastViewDidDismissNotification;
 
 
-@class DPToastViewAnimator;
+@class    DPToastViewAnimator;
+@protocol DPToastViewDelegate;
 
 
 @interface DPToastView : UIView
@@ -16,6 +17,8 @@ extern NSString* const DPToastViewDidDismissNotification;
 - (void)showInView:(UIView*)targetView;
 @property (nonatomic, weak) UIView* targetView;
 - (void)dismiss;
+
+@property (nonatomic, weak) id<DPToastViewDelegate> delegate;
 
 @property (nonatomic) NSTimeInterval displayingDuration;
 @property (nonatomic, weak, readonly) UIView* containerView;
@@ -26,4 +29,13 @@ extern NSString* const DPToastViewDidDismissNotification;
 @property (nonatomic, readonly, getter=isDismissAnimating) BOOL dismissAnimating;
 @property (nonatomic, readonly, getter=isShowing)          BOOL showing;
 
+@property (nonatomic, readonly, getter=isTracking)         BOOL tracking;
+@property (nonatomic, readonly, getter=isDragging)         BOOL dragging;
+
+@end
+
+
+@protocol DPToastViewDelegate <NSObject>
+@optional
+- (void)toastViewDidTapped:(DPToastView*)toastView;
 @end
