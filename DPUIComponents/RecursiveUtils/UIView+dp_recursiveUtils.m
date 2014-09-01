@@ -60,6 +60,32 @@
 
 #pragma mark -
 
+- (void)dp_recursiveSetHighlighted:(BOOL)highlighted
+{
+    if ([self isKindOfClass:[UIControl class]]) {
+        UIControl* control = (UIControl*)self;
+        control.highlighted = highlighted;
+    }
+    
+    for (UIView* subview in self.subviews) {
+        [subview dp_recursiveSetHighlighted:highlighted];
+    }
+}
+
+- (void)dp_recursiveSetSelected:(BOOL)selected
+{
+    if ([self isKindOfClass:[UIControl class]]) {
+        UIControl* control = (UIControl*)self;
+        control.selected = selected;
+    }
+    
+    for (UIView* subview in self.subviews) {
+        [subview dp_recursiveSetSelected:selected];
+    }
+}
+
+#pragma mark -
+
 - (void)dp_recursiveDeselectSelectedTableCellWithAnimated:(BOOL)animated
 {
     [self dp_recursiveDeselectSelectedTableCellWithAnimated:animated targetView:self];
