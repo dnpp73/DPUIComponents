@@ -94,7 +94,10 @@
     
     [_marqueeScrollView setContentOffset:CGPointZero animated:NO];
     
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     CGSize size = [self.text sizeWithFont:self.font forWidth:CGFLOAT_MAX lineBreakMode:_label.lineBreakMode];
+    #pragma clang diagnostic pop
     size.height = _marqueeScrollView.bounds.size.height;
     CGPoint origin = CGPointZero;
     if (size.width < _marqueeScrollView.bounds.size.width) {
@@ -298,7 +301,10 @@
     
     [_marqueeScrollView setContentOffset:CGPointZero animated:animated];
     
+    #pragma clang diagnostic push
+    #pragma clang diagnostic ignored "-Wdeprecated-declarations"
     CGSize size = [self.text sizeWithFont:self.font forWidth:CGFLOAT_MAX lineBreakMode:_label.lineBreakMode];
+    #pragma clang diagnostic pop
     size.height = _marqueeScrollView.bounds.size.height;
     CGPoint origin = CGPointZero;
     if (size.width < _marqueeScrollView.bounds.size.width) {
