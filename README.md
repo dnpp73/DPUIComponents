@@ -3,10 +3,16 @@ DPUIComponents
 
 [![Build Status](http://img.shields.io/travis/dnpp73/DPUIComponents.svg?style=flat-square)](https://travis-ci.org/dnpp73/DPUIComponents)
 
+### Dependency
+* [`UIView+dp_recursiveUtils`](https://github.com/dnpp73/UIView+dp_recursiveUtils)
+
+### Require Framework
+* None
+
+# Description
 User Interfaces for UIKit
 
 # LICENSE
-
 Copyright (c) 2013 Yusuke Sugamiya
 
 Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:

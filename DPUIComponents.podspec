@@ -4,11 +4,14 @@ Pod::Spec.new do |s|
   s.summary               = "User Interfaces for UIKit"
   s.author                = { "Yusuke SUGAMIYA" => "yusuke.dnpp@gmail.com" }
   s.homepage              = "https://github.com/dnpp73/DPUIComponents"
-  s.ios.deployment_target = '6.0'
   s.source                = { :git => "https://github.com/dnpp73/DPUIComponents.git", :tag => "#{s.version}" }
   s.ios.source_files      = 'DPUIComponents/**/*.{h,m}'
+  s.ios.deployment_target = '6.0'
   s.requires_arc          = true
-  s.license               = {
+
+  s.dependency 'UIView+dp_recursiveUtils'
+
+  s.license = {
    :type => 'MIT',
    :text => <<-LICENSE
    Copyright (c) 2013 Yusuke Sugamiya
