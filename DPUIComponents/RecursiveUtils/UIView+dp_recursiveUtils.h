@@ -11,4 +11,6 @@
 
 - (void)dp_recursiveDeselectSelectedTableCellWithAnimated:(BOOL)animated;
 
+- (UIResponder*)dp_firstResponderView;
+
 @end

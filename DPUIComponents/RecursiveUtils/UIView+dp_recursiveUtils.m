@@ -116,4 +116,28 @@
     }
 }
 
+#pragma mark -
+
+- (UIResponder*)dp_firstResponderView
+{
+    return (UIResponder*)[self dp_recursiveFindFirstResponderInView:self];
+}
+
+- (UIView*)dp_recursiveFindFirstResponderInView:(UIView*)view
+{
+    UIView* responderView = nil;
+    if (view.isFirstResponder) {
+        responderView = view;
+    }
+    else {
+        for (UIView* subview in view.subviews) {
+            UIView* v = [self dp_recursiveFindFirstResponderInView:subview];
+            if (v) {
+                responderView = v;
+            }
+        }
+    }
+    return responderView;
+}
+
 @end
