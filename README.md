@@ -4,7 +4,7 @@ DPUIComponents
 [![Build Status](http://img.shields.io/travis/dnpp73/DPUIComponents.svg?style=flat-square)](https://travis-ci.org/dnpp73/DPUIComponents)
 
 ### Dependency
-* [`UIView+dp_recursiveUtils`](https://github.com/dnpp73/UIView+dp_recursiveUtils)
+* [`UIView+dp_recursiveUtils`](https://github.com/dnpp73/UIView-dp_recursiveUtils)
 
 ### Require Framework
 * None
