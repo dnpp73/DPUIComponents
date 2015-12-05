@@ -1,16 +1,20 @@
 language: objective-c
-
-osx_image: xcode7
+osx_image: xcode7.1
+xcode_workspace: DPUIComponents.xcworkspace
 
 cache:
   directories:
     - $HOME/.cocoapods
 
 before_install:
-  - gem install cocoapods --no-ri --no-rdoc
-
-before_script:
+  - gem install cocoapods xcpretty --no-ri --no-rdoc
   - pod setup > /dev/null 2>&1
+  - brew update
+  - brew install carthage
+  - carthage bootstrap --use-submodules --no-use-binaries --no-build
+  - set -o pipefail
+  - xcodebuild clean -workspace DPUIComponents.xcworkspace -scheme DPUIComponents -configuration Release -sdk iphonesimulator | xcpretty -c
 
 script:
   - pod lib lint --sources='https://github.com/CocoaPods/Specs'
+  - xcodebuild -workspace DPUIComponents.xcworkspace -scheme DPUIComponents -configuration Release -sdk iphonesimulator | xcpretty -c

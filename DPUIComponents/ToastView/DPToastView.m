@@ -2,7 +2,12 @@
 #import "DPToastViewManager.h"
 #import "DPToastViewManager_Private.h"
 #import "DPToastViewAnimator.h"
+
+#if DPUICOMPONENTS_PODS_RECURSIVEUTILS
 #import "UIView+dp_recursiveUtils.h"
+#else
+#import <UIViewRecursiveUtils/UIView+dp_recursiveUtils.h>
+#endif
 
 
 NSString* const DPToastViewWillShowNotification    = @"DPToastViewWillShowNotification";

@@ -11,6 +11,10 @@ Pod::Spec.new do |s|
 
   s.dependency 'UIView+dp_recursiveUtils'
 
+  s.xcconfig = {
+    'GCC_PREPROCESSOR_DEFINITIONS' => 'DPUICOMPONENTS_PODS_RECURSIVEUTILS=1'
+  }
+
   s.license = {
    :type => 'MIT',
    :text => <<-LICENSE

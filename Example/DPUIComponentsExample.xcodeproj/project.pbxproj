@@ -7,8 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1905001E1C12A32100A8B8ED /* UIViewRecursiveUtils.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1905001D1C12A32100A8B8ED /* UIViewRecursiveUtils.framework */; };
+		1905001F1C12A32100A8B8ED /* UIViewRecursiveUtils.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 1905001D1C12A32100A8B8ED /* UIViewRecursiveUtils.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1924F57719586A950090DB7A /* DPToastViewManager.m */; };
-		1924F57919586A950090DB7A /* DPToastViewManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 1924F57719586A950090DB7A /* DPToastViewManager.m */; };
 		19256D051950AE1300969AD5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 19256D071950AE1300969AD5 /* Main.storyboard */; };
 		1930481E195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
 		19304820195054A10052E551 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481F195054A10052E551 /* CoreGraphics.framework */; };
@@ -16,70 +17,35 @@
 		1930482A195054A10052E551 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304829195054A10052E551 /* main.m */; };
 		1930482E195054A10052E551 /* DPAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 1930482D195054A10052E551 /* DPAppDelegate.m */; };
 		19304830195054A10052E551 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1930482F195054A10052E551 /* Images.xcassets */; };
-		19304837195054A10052E551 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304836195054A10052E551 /* XCTest.framework */; };
-		19304838195054A10052E551 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1930481D195054A10052E551 /* Foundation.framework */; };
-		19304839195054A10052E551 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 19304821195054A10052E551 /* UIKit.framework */; };
-		19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 19304842195054A10052E551 /* DPUIComponentsExampleTests.m */; };
 		1936E6D6195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */; };
-		1936E6D7195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */ = {isa = PBXBuildFile; fileRef = 1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */; };
 		19759DA51958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
-		19759DA61958775900B062C0 /* DPToastView.m in Sources */ = {isa = PBXBuildFile; fileRef = 19759DA41958775900B062C0 /* DPToastView.m */; };
 		1998CBFE195BF44200366FA5 /* DPNavigationController.m in Sources */ = {isa = PBXBuildFile; fileRef = 1998CBFD195BF44200366FA5 /* DPNavigationController.m */; };
 		19B63ED81951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
-		19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ECE1951938800CCCD9C /* UIView+dp_fadeInOut.m */; };
 		19B63EDA1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED11951938800CCCD9C /* DPHorizontalScrollableViewController.m */; };
-		19B63EDB1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED11951938800CCCD9C /* DPHorizontalScrollableViewController.m */; };
 		19B63EDC1951938800CCCD9C /* DPMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */; };
-		19B63EDD1951938800CCCD9C /* DPMarqueeLabel.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */; };
-		19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
-		19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */; };
 		19D97CEB195C1B4300AF1538 /* DPModalViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D97CEA195C1B4300AF1538 /* DPModalViewController.m */; };
 		19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 19D9EDAD1959B33F004E3382 /* DPTableViewController.m */; };
 /* End PBXBuildFile section */
 
-/* Begin PBXContainerItemProxy section */
-		190AF626195151FE00B629FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19304812195054A10052E551 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19304819195054A10052E551;
-			remoteInfo = DPUIComponentsExample;
+/* Begin PBXCopyFilesBuildPhase section */
+		190500201C12A32200A8B8ED /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				1905001F1C12A32100A8B8ED /* UIViewRecursiveUtils.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
 		};
-		190AF628195151FE00B629FF /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19304812195054A10052E551 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19304819195054A10052E551;
-			remoteInfo = DPUIComponentsExample;
-		};
-		1924F57A19586AF40090DB7A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19304812195054A10052E551 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19304819195054A10052E551;
-			remoteInfo = DPUIComponentsExample;
-		};
-		1924F57C19586AF40090DB7A /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19304812195054A10052E551 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19304819195054A10052E551;
-			remoteInfo = DPUIComponentsExample;
-		};
-		1930483A195054A10052E551 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 19304812195054A10052E551 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 19304819195054A10052E551;
-			remoteInfo = DPUIComponentsExample;
-		};
-/* End PBXContainerItemProxy section */
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		1905001D1C12A32100A8B8ED /* UIViewRecursiveUtils.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIViewRecursiveUtils.framework; path = Carthage/Build/iOS/UIViewRecursiveUtils.framework; sourceTree = "<group>"; };
 		1924F57619586A950090DB7A /* DPToastViewManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastViewManager.h; sourceTree = "<group>"; };
 		1924F57719586A950090DB7A /* DPToastViewManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastViewManager.m; sourceTree = "<group>"; };
 		19256D081950AE5600969AD5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		19256D0E1950AF2000969AD5 /* DPUIComponentsExampleTests-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "DPUIComponentsExampleTests-Info.plist"; sourceTree = "<group>"; };
 		1930481A195054A10052E551 /* DPUIComponentsExample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DPUIComponentsExample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1930481D195054A10052E551 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		1930481F195054A10052E551 /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -90,9 +56,6 @@
 		1930482C195054A10052E551 /* DPAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = DPAppDelegate.h; sourceTree = "<group>"; };
 		1930482D195054A10052E551 /* DPAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPAppDelegate.m; sourceTree = "<group>"; };
 		1930482F195054A10052E551 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DPUIComponentsExampleTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		19304836195054A10052E551 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		19304842195054A10052E551 /* DPUIComponentsExampleTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = DPUIComponentsExampleTests.m; sourceTree = "<group>"; };
 		1936E6D4195AE26D00CBCBC7 /* DPToastViewAnimator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastViewAnimator.h; sourceTree = "<group>"; };
 		1936E6D5195AE26D00CBCBC7 /* DPToastViewAnimator.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPToastViewAnimator.m; sourceTree = "<group>"; };
 		19759DA31958775900B062C0 /* DPToastView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPToastView.h; sourceTree = "<group>"; };
@@ -106,8 +69,6 @@
 		19B63ED11951938800CCCD9C /* DPHorizontalScrollableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPHorizontalScrollableViewController.m; sourceTree = "<group>"; };
 		19B63ED31951938800CCCD9C /* DPMarqueeLabel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPMarqueeLabel.h; sourceTree = "<group>"; };
 		19B63ED41951938800CCCD9C /* DPMarqueeLabel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPMarqueeLabel.m; sourceTree = "<group>"; };
-		19B63ED61951938800CCCD9C /* UIView+dp_recursiveUtils.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+dp_recursiveUtils.h"; sourceTree = "<group>"; };
-		19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+dp_recursiveUtils.m"; sourceTree = "<group>"; };
 		19D97CE9195C1B4300AF1538 /* DPModalViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPModalViewController.h; sourceTree = "<group>"; };
 		19D97CEA195C1B4300AF1538 /* DPModalViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = DPModalViewController.m; sourceTree = "<group>"; };
 		19D9EDAC1959B33F004E3382 /* DPTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = DPTableViewController.h; sourceTree = "<group>"; };
@@ -119,19 +80,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1905001E1C12A32100A8B8ED /* UIViewRecursiveUtils.framework in Frameworks */,
 				19304820195054A10052E551 /* CoreGraphics.framework in Frameworks */,
 				19304822195054A10052E551 /* UIKit.framework in Frameworks */,
 				1930481E195054A10052E551 /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19304832195054A10052E551 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19304837195054A10052E551 /* XCTest.framework in Frameworks */,
-				19304839195054A10052E551 /* UIKit.framework in Frameworks */,
-				19304838195054A10052E551 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -157,7 +109,6 @@
 			children = (
 				199ECF4A1950557E00C722FB /* DPUIComponents */,
 				19304823195054A10052E551 /* DPUIComponentsExample */,
-				1930483C195054A10052E551 /* DPUIComponentsExampleTests */,
 				1930481C195054A10052E551 /* Frameworks */,
 				1930481B195054A10052E551 /* Products */,
 			);
@@ -167,7 +118,6 @@
 			isa = PBXGroup;
 			children = (
 				1930481A195054A10052E551 /* DPUIComponentsExample.app */,
-				19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -175,10 +125,10 @@
 		1930481C195054A10052E551 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1905001D1C12A32100A8B8ED /* UIViewRecursiveUtils.framework */,
 				1930481D195054A10052E551 /* Foundation.framework */,
 				1930481F195054A10052E551 /* CoreGraphics.framework */,
 				19304821195054A10052E551 /* UIKit.framework */,
-				19304836195054A10052E551 /* XCTest.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -211,30 +161,12 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		1930483C195054A10052E551 /* DPUIComponentsExampleTests */ = {
-			isa = PBXGroup;
-			children = (
-				19304842195054A10052E551 /* DPUIComponentsExampleTests.m */,
-				1930483D195054A10052E551 /* Supporting Files */,
-			);
-			path = DPUIComponentsExampleTests;
-			sourceTree = "<group>";
-		};
-		1930483D195054A10052E551 /* Supporting Files */ = {
-			isa = PBXGroup;
-			children = (
-				19256D0E1950AF2000969AD5 /* DPUIComponentsExampleTests-Info.plist */,
-			);
-			name = "Supporting Files";
-			sourceTree = "<group>";
-		};
 		199ECF4A1950557E00C722FB /* DPUIComponents */ = {
 			isa = PBXGroup;
 			children = (
 				19B63ECF1951938800CCCD9C /* HorizontalScrollableViewController */,
 				19B63ED21951938800CCCD9C /* MarqueeLabel */,
 				19B63ECC1951938800CCCD9C /* FadeInOut */,
-				19B63ED51951938800CCCD9C /* RecursiveUtils */,
 				1924F57519586A750090DB7A /* ToastView */,
 			);
 			name = DPUIComponents;
@@ -268,15 +200,6 @@
 			path = MarqueeLabel;
 			sourceTree = "<group>";
 		};
-		19B63ED51951938800CCCD9C /* RecursiveUtils */ = {
-			isa = PBXGroup;
-			children = (
-				19B63ED61951938800CCCD9C /* UIView+dp_recursiveUtils.h */,
-				19B63ED71951938800CCCD9C /* UIView+dp_recursiveUtils.m */,
-			);
-			path = RecursiveUtils;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -287,6 +210,7 @@
 				19304816195054A10052E551 /* Sources */,
 				19304817195054A10052E551 /* Frameworks */,
 				19304818195054A10052E551 /* Resources */,
+				190500201C12A32200A8B8ED /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -297,28 +221,6 @@
 			productReference = 1930481A195054A10052E551 /* DPUIComponentsExample.app */;
 			productType = "com.apple.product-type.application";
 		};
-		19304834195054A10052E551 /* DPUIComponentsExampleTests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 19304849195054A10052E551 /* Build configuration list for PBXNativeTarget "DPUIComponentsExampleTests" */;
-			buildPhases = (
-				19304831195054A10052E551 /* Sources */,
-				19304832195054A10052E551 /* Frameworks */,
-				19304833195054A10052E551 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				1930483B195054A10052E551 /* PBXTargetDependency */,
-				190AF627195151FE00B629FF /* PBXTargetDependency */,
-				190AF629195151FE00B629FF /* PBXTargetDependency */,
-				1924F57B19586AF40090DB7A /* PBXTargetDependency */,
-				1924F57D19586AF40090DB7A /* PBXTargetDependency */,
-			);
-			name = DPUIComponentsExampleTests;
-			productName = DPUIComponentsExampleTests;
-			productReference = 19304835195054A10052E551 /* DPUIComponentsExampleTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -326,13 +228,8 @@
 			isa = PBXProject;
 			attributes = {
 				CLASSPREFIX = DP;
-				LastUpgradeCheck = 0510;
+				LastUpgradeCheck = 0710;
 				ORGANIZATIONNAME = dnpp.org;
-				TargetAttributes = {
-					19304834195054A10052E551 = {
-						TestTargetID = 19304819195054A10052E551;
-					};
-				};
 			};
 			buildConfigurationList = 19304815195054A10052E551 /* Build configuration list for PBXProject "DPUIComponentsExample" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -348,7 +245,6 @@
 			projectRoot = "";
 			targets = (
 				19304819195054A10052E551 /* DPUIComponentsExample */,
-				19304834195054A10052E551 /* DPUIComponentsExampleTests */,
 			);
 		};
 /* End PBXProject section */
@@ -360,13 +256,6 @@
 			files = (
 				19256D051950AE1300969AD5 /* Main.storyboard in Resources */,
 				19304830195054A10052E551 /* Images.xcassets in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		19304833195054A10052E551 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -382,7 +271,6 @@
 				19759DA51958775900B062C0 /* DPToastView.m in Sources */,
 				19D9EDAE1959B33F004E3382 /* DPTableViewController.m in Sources */,
 				19B63EDC1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
-				19B63EDE1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
 				1936E6D6195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */,
 				1930482A195054A10052E551 /* main.m in Sources */,
 				1924F57819586A950090DB7A /* DPToastViewManager.m in Sources */,
@@ -392,50 +280,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		19304831195054A10052E551 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				19B63ED91951938800CCCD9C /* UIView+dp_fadeInOut.m in Sources */,
-				19B63EDF1951938800CCCD9C /* UIView+dp_recursiveUtils.m in Sources */,
-				1936E6D7195AE26D00CBCBC7 /* DPToastViewAnimator.m in Sources */,
-				1924F57919586A950090DB7A /* DPToastViewManager.m in Sources */,
-				19B63EDB1951938800CCCD9C /* DPHorizontalScrollableViewController.m in Sources */,
-				19304843195054A10052E551 /* DPUIComponentsExampleTests.m in Sources */,
-				19759DA61958775900B062C0 /* DPToastView.m in Sources */,
-				19B63EDD1951938800CCCD9C /* DPMarqueeLabel.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXTargetDependency section */
-		190AF627195151FE00B629FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
-			targetProxy = 190AF626195151FE00B629FF /* PBXContainerItemProxy */;
-		};
-		190AF629195151FE00B629FF /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
-			targetProxy = 190AF628195151FE00B629FF /* PBXContainerItemProxy */;
-		};
-		1924F57B19586AF40090DB7A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
-			targetProxy = 1924F57A19586AF40090DB7A /* PBXContainerItemProxy */;
-		};
-		1924F57D19586AF40090DB7A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
-			targetProxy = 1924F57C19586AF40090DB7A /* PBXContainerItemProxy */;
-		};
-		1930483B195054A10052E551 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 19304819195054A10052E551 /* DPUIComponentsExample */;
-			targetProxy = 1930483A195054A10052E551 /* PBXContainerItemProxy */;
-		};
-/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		19256D071950AE1300969AD5 /* Main.storyboard */ = {
@@ -467,6 +312,7 @@
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -524,9 +370,16 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DPUIComponentsExample/DPUIComponentsExample-Prefix.pch";
 				INFOPLIST_FILE = "DPUIComponentsExample/DPUIComponentsExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
 			};
@@ -537,51 +390,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "DPUIComponentsExample/DPUIComponentsExample-Prefix.pch";
 				INFOPLIST_FILE = "DPUIComponentsExample/DPUIComponentsExample-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.dnpp.${PRODUCT_NAME:rfc1034identifier}";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				WRAPPER_EXTENSION = app;
-			};
-			name = Release;
-		};
-		1930484A195054A10052E551 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DPUIComponentsExample.app/DPUIComponentsExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DPUIComponentsExample/DPUIComponentsExample-Prefix.pch";
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
-					"$(inherited)",
-				);
-				INFOPLIST_FILE = "DPUIComponentsExampleTests/DPUIComponentsExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
-			};
-			name = Debug;
-		};
-		1930484B195054A10052E551 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(BUILT_PRODUCTS_DIR)/DPUIComponentsExample.app/DPUIComponentsExample";
-				FRAMEWORK_SEARCH_PATHS = (
-					"$(SDKROOT)/Developer/Library/Frameworks",
-					"$(inherited)",
-					"$(DEVELOPER_FRAMEWORKS_DIR)",
-				);
-				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "DPUIComponentsExample/DPUIComponentsExample-Prefix.pch";
-				INFOPLIST_FILE = "DPUIComponentsExampleTests/DPUIComponentsExampleTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUNDLE_LOADER)";
-				WRAPPER_EXTENSION = xctest;
 			};
 			name = Release;
 		};
@@ -602,15 +422,6 @@
 			buildConfigurations = (
 				19304847195054A10052E551 /* Debug */,
 				19304848195054A10052E551 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		19304849195054A10052E551 /* Build configuration list for PBXNativeTarget "DPUIComponentsExampleTests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				1930484A195054A10052E551 /* Debug */,
-				1930484B195054A10052E551 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

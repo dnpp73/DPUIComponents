@@ -1,0 +1,30 @@
+{
+  "DVTSourceControlWorkspaceBlueprintPrimaryRemoteRepositoryKey" : "F3C79E434440A60F0308B79D61B21D267AA55CA0",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyRepositoryLocationsKey" : {
+
+  },
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyStatesKey" : {
+    "F3C79E434440A60F0308B79D61B21D267AA55CA0" : 0,
+    "E2C64F6900A6FBBE5C45E3D3EAFBF913EF16CFCE" : 0
+  },
+  "DVTSourceControlWorkspaceBlueprintIdentifierKey" : "64B905C0-F747-4738-A689-2A8F6E57BD53",
+  "DVTSourceControlWorkspaceBlueprintWorkingCopyPathsKey" : {
+    "F3C79E434440A60F0308B79D61B21D267AA55CA0" : "DPUIComponents\/",
+    "E2C64F6900A6FBBE5C45E3D3EAFBF913EF16CFCE" : "DPUIComponents\/Carthage\/Checkouts\/UIView-dp_recursiveUtils\/"
+  },
+  "DVTSourceControlWorkspaceBlueprintNameKey" : "DPUIComponents",
+  "DVTSourceControlWorkspaceBlueprintVersion" : 204,
+  "DVTSourceControlWorkspaceBlueprintRelativePathToProjectKey" : "DPUIComponents.xcworkspace",
+  "DVTSourceControlWorkspaceBlueprintRemoteRepositoriesKey" : [
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "https:\/\/github.com\/dnpp73\/UIView-dp_recursiveUtils.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "E2C64F6900A6FBBE5C45E3D3EAFBF913EF16CFCE"
+    },
+    {
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryURLKey" : "github.com:dnpp73\/DPUIComponents.git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositorySystemKey" : "com.apple.dt.Xcode.sourcecontrol.Git",
+      "DVTSourceControlWorkspaceBlueprintRemoteRepositoryIdentifierKey" : "F3C79E434440A60F0308B79D61B21D267AA55CA0"
+    }
+  ]
+}

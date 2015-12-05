@@ -2,6 +2,7 @@ DPUIComponents
 ============
 
 [![Build Status](http://img.shields.io/travis/dnpp73/DPUIComponents.svg?style=flat-square)](https://travis-ci.org/dnpp73/DPUIComponents)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat-square)](https://github.com/Carthage/Carthage)
 
 ### Dependency
 * [`UIView+dp_recursiveUtils`](https://github.com/dnpp73/UIView-dp_recursiveUtils)
@@ -11,6 +12,15 @@ DPUIComponents
 
 # Description
 User Interfaces for UIKit
+
+# How to build Example
+
+```sh
+brew install carthage
+cd Example
+carthage bootstrap
+open DPUIComponentsExample.xcodeproj
+```
 
 # LICENSE
 Copyright (c) 2013 dnpp.org
